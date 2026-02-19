@@ -9,29 +9,6 @@ import java.util.concurrent.TimeUnit;
 
 public class TranslationService {
     private static final String API_URL = "https://google-translate1.p.rapidapi.com/language/translate/v2";
-    // NOTE: In a real scenario, API keys should be environmentally injected or
-    // secure.
-    // For this assignment, we might default to a placeholder or a direct HTTP call
-    // if possible.
-    // Since we don't have a guaranteed key, we will implement a robust
-    // mock/fallback
-    // text processing or a public endpoint if available.
-
-    // HOWEVER, the assignment explicitly mentions "Rapid Translate Multi Traduction
-    // API" or Google.
-    // Without a key, we can't truly hit the RapidAPI.
-    // user provided: "Google Translate API" or "Rapid Translate Multi Traduction
-    // API".
-    // I will try to use a mechanism that doesn't strictly require a paid key if
-    // possible,
-    // or I'll structure it to accept one.
-
-    // For the purpose of this assignment demo without a provided key,
-    // I will simulate translation or use a free endpoint if I can find one
-    // reliable.
-    // But to be "pro", I'll implement the actual client code for RapidAPI and
-    // expect a key.
-
     private final OkHttpClient client;
     private final Gson gson;
     private final String apiKey;

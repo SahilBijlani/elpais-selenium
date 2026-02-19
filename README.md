@@ -25,11 +25,6 @@ Built with **Java** and **Selenium**, it leverages the **BrowserStack Automate**
     *   **Fallback**: Automatically switches to **Google Translate (Free)** endpoint if no key is provided, ensuring zero-configuration execution.
 *   **Visual Verification**: Downloads high-res article images to a local directory for visual checks.
 
-### 📸 Proof of Work
-![BrowserStack Execution](images/ss.jpg)
-
----
-
 ## �️ Tech Stack
 
 | Component | Technology | Description |
@@ -83,6 +78,12 @@ For quick debugging without cloud credits:
 mvn test
 mvn clean test -Dtest=ElPaisTest
 ```
+
+---
+
+
+### 📸 Proof of Work
+![BrowserStack Execution](images/ss.jpg)
 
 ---
 
