@@ -83,7 +83,7 @@ mvn clean test -Dtest=ElPaisTest
 
 
 ### 📸 Proof of Work
-![BrowserStack Execution](images/ss.jpg)
+![BrowserStack Execution](ss.jpg)
 
 ---
 
