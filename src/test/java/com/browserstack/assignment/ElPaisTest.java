@@ -53,7 +53,11 @@ public class ElPaisTest {
             bstackOptions.put("userName", username);
             bstackOptions.put("accessKey", accessKey);
             bstackOptions.put("projectName", "El Pais Assignment");
-            bstackOptions.put("buildName", "Build 1.0");
+            String buildName = System.getProperty("buildName");
+            if (buildName == null) {
+                buildName = "Build " + new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm").format(new java.util.Date());
+            }
+            bstackOptions.put("buildName", buildName);
 
             if (device != null) {
                 bstackOptions.put("deviceName", device);
@@ -132,6 +136,14 @@ public class ElPaisTest {
         // The subsequent steps (Image Download, Translation) are local and do not
         // require the browser.
         if (driver != null) {
+            try {
+                // Mark session as passed before quitting, assuming scrape was successful up to
+                // here
+                ((org.openqa.selenium.JavascriptExecutor) driver).executeScript(
+                        "browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\": \"passed\", \"reason\": \"Articles Scraped Successfully\"}}");
+            } catch (Exception e) {
+                System.out.println("Could not mark session status: " + e.getMessage());
+            }
             driver.quit();
             driver = null; // Prevent tearDown from trying to quit again
         }
