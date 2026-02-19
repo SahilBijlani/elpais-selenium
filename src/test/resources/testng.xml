@@ -1,0 +1,59 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="ElPaisSuite" parallel="tests" thread-count="5">
+    
+    <!-- Desktop: Chrome on Windows 10 -->
+    <test name="Win10-Chrome">
+        <parameter name="os" value="Windows"/>
+        <parameter name="os_version" value="10"/>
+        <parameter name="browser" value="Chrome"/>
+        <parameter name="browser_version" value="latest"/>
+        <classes>
+            <class name="com.browserstack.assignment.ElPaisTest"/>
+        </classes>
+    </test>
+
+    <!-- Desktop: Firefox on macOS -->
+    <test name="Mac-Firefox">
+        <parameter name="os" value="OS X"/>
+        <parameter name="os_version" value="Big Sur"/>
+        <parameter name="browser" value="Firefox"/>
+        <parameter name="browser_version" value="latest"/>
+        <classes>
+            <class name="com.browserstack.assignment.ElPaisTest"/>
+        </classes>
+    </test>
+
+    <!-- Mobile: iPhone 14 -->
+    <test name="iPhone14">
+        <parameter name="device" value="iPhone 14"/>
+        <parameter name="os_version" value="16"/>
+        <parameter name="browser" value="Safari"/>
+        <parameter name="real_mobile" value="true"/>
+        <classes>
+            <class name="com.browserstack.assignment.ElPaisTest"/>
+        </classes>
+    </test>
+
+    <!-- Mobile: Samsung Galaxy S23 -->
+    <test name="SamsungS23">
+        <parameter name="device" value="Samsung Galaxy S23"/>
+        <parameter name="os_version" value="13.0"/>
+        <parameter name="browser" value="Chrome"/>
+        <parameter name="real_mobile" value="true"/>
+        <classes>
+            <class name="com.browserstack.assignment.ElPaisTest"/>
+        </classes>
+    </test>
+
+    <!-- Desktop: Edge on Windows 11 -->
+    <test name="Win11-Edge">
+        <parameter name="os" value="Windows"/>
+        <parameter name="os_version" value="11"/>
+        <parameter name="browser" value="Edge"/>
+        <parameter name="browser_version" value="latest"/>
+        <classes>
+            <class name="com.browserstack.assignment.ElPaisTest"/>
+        </classes>
+    </test>
+
+</suite>
