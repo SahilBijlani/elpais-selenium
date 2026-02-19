@@ -37,10 +37,8 @@ public class ElPaisTest {
             String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");
 
             if (username == null || accessKey == null) {
-                // Fallback to properties or throw exception
-                // For the purpose of the assignment, if env vars are missing, we might want to
-                // warn or fail
-                // But let's check system properties too as maven -D args
+                // Fallback to properties or throw exception if env vars are missing, we might
+                // want to warn or fail
                 username = System.getProperty("browserstack.username", username);
                 accessKey = System.getProperty("browserstack.accessKey", accessKey);
             }
@@ -151,11 +149,11 @@ public class ElPaisTest {
         // 4. Download Images
         // Only download if we are running locally? Or always?
         // If remote, saving to local disk works if we use bytes, but we are using URLs.
-        // The code downloads to local machine where code is running. So it's fine.
+        // The code downloads to local machine where code is running.
         page.downloadImages(articles);
 
         // 5. Translate Headers
-        TranslationService translator = new TranslationService(""); // No API Key for demo
+        TranslationService translator = new TranslationService("");
         List<String> translatedHeaders = new ArrayList<>();
 
         System.out.println("--- Translated Headers ---");
